@@ -3,6 +3,7 @@ Container_ID = [1,2,3,4,5,6]
 pick_up_position = (x,y,z)
 #Defining all our functions:
 
+#Funtion to determine pre-calculated location based on size and colour of container#
 def autoclave_bin_location(Container_ID):
     for i in range(len(Container_ID)):
         if Container_ID[i] == 1
@@ -20,6 +21,8 @@ def autoclave_bin_location(Container_ID):
 
     return location_ID
 
+
+#Function to control the position and angle of gripper arm during pick-up#
 def pick_up:(Container_ID):
     if arm.emg_left()>0.85 and arm.emg_right()==0:
         arm.move_arm(pick_up_position)
@@ -27,6 +30,7 @@ def pick_up:(Container_ID):
     else:
         pass
 
+#Function to determine the location of autoclave drawer to place container in.#
 def drop_off(Container_ID):
     if arm.emg_left()>0.85 and arm.emg_right()==0:
         drop_off_position = autoclave_bin_location(Container_ID)
@@ -34,6 +38,8 @@ def drop_off(Container_ID):
         time.sleep(2)
         arm.home()
 
+        
+#Function to control the gripper arm's postion (Closed or Open)#
 def control_gripper(Container_ID,states):
     if states == "open"
         if arm.emg_left()>0.85 and arm.emg_right()>0.85:
@@ -52,6 +58,7 @@ def control_gripper(Container_ID,states):
             else:
                 pass
 
+#Function to open autoclave drawer for larger containers#
 def control_autoclave_bin(Container_ID):
     if Container_ID == 1 or 2 or 3:
         pass
@@ -64,7 +71,7 @@ def control_autoclave_bin(Container_ID):
     
 
 
-
+#MAIN function to call previously defined functions#
 def main():
     if Container_ID
     if Container_ID = 4:
